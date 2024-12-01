@@ -1,0 +1,86 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependency directories
+node_modules/
+.pnp/
+.pnp.js
+
+# Build output
+.next/
+out/
+build/
+
+# Static files cache
+.cache/
+
+# Testing
+coverage/
+*.lcov
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Next.js specific
+.next/
+public/**/*.map
+vercel.json
+
+# Ignoring local tools
+.vscode/
+.idea/
+.DS_Store
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+
+# OS generated files
+Thumbs.db
+.DS_Store
+
+# Lockfiles
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Custom Next.js server
+server.js
+server.mjs
+
+# Temporary files
+*.tmp
+*.temp
+*.pid
+*.seed
+
+# Ignore TypeScript build artifacts
+*.tsbuildinfo
+
+# Ignore ESLint cache
+.eslintcache
+
+# Ignore Prettier cache
+.prettierignore
+.prettierrc
+.prettiercache
+
+# Ignore local npm binaries
+.npm
+
+# Ignore Lint-staged cache
+.lintstagedrc*
+
+# Ignore TurboRepo cache
+turbo
+
+# Ignore Mac OS specific files
+Icon?
