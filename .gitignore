@@ -48,9 +48,9 @@ Thumbs.db
 .DS_Store
 
 # Lockfiles
-package-lock.json
-yarn.lock
-pnpm-lock.yaml
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
 
 # Custom Next.js server
 server.js
