@@ -56,7 +56,7 @@ const workExperience = [
     company: 'Costco Mobility',
     logo: 'https://res.cloudinary.com/slavavisuals/image/upload/c_limit,w_320/experience/costco.png',
     year: 'Dec 2020 - May 2023',
-    title: 'AI Startup Landing Page',
+    title: 'Senior Front End Developer',
     results: [
       {
         title:
@@ -163,7 +163,7 @@ const Experience = () => {
             >
               <div className='md:grid lg:grid-cols-2 lg:gap-16'>
                 <div className='lg:pb-16'>
-                  <div className='pb-4 text-white/50 items-center justify-center flex font-bold uppercase tracking-widest text-sm text-transparent'>
+                  <div className='pb-4 text-white/50 items-center justify-center flex font-bold uppercase tracking-widest text-sm'>
                     <span>{workplace.year}</span>
                   </div>
 
@@ -188,8 +188,11 @@ const Experience = () => {
                   </h3>
                   <hr className='border-t-2 border-white/5 mt-4 md:mt-5' />
                   <ul className='flex flex-col gap-4 mt-4 md:mt-5'>
-                    {workplace.results.map((result) => (
-                      <li className='flex gap-2 text-sm md:text-base text-white/50'>
+                    {workplace.results.map((result, idx) => (
+                      <li
+                        key={idx}
+                        className='flex gap-2 text-sm md:text-base text-white/50'
+                      >
                         <CheckCircleIcon className='size-5 md:size-6' />
                         <span>{result.title}</span>{' '}
                       </li>

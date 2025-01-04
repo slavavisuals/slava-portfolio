@@ -11,8 +11,10 @@ const calistoga = Calistoga({
 });
 
 export const metadata: Metadata = {
-  title: 'My Portfolio',
-  description: 'Created with the help of Frontend Tribe',
+  title:
+    'Front-End Engineer & Consultant | React.js, Next.js, & CMS Specialist - JustSlava.com',
+  description:
+    'Front-End Engineer and Consultant with over a decade of experience. Specializing in React.js, Next.js, and CMS solutions to build fast, scalable web apps, e-commerce platforms, SPAs, and dynamic content-driven websites.',
 };
 
 export default function RootLayout({

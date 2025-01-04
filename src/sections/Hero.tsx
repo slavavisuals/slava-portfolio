@@ -125,8 +125,10 @@ export const HeroSection = () => {
             Building Exceptional User Experiences
           </h1>
           <p className='mt-4 text-center text-white/60 md:text-lg'>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
-            velit ratione mollitia quaerat dignissimos ab minima amet nesciunt{' '}
+            Front-End Engineer and Consultant with over a decade of experience.
+            Specializing in React.js, Next.js, and CMS solutions to build fast,
+            scalable web apps, e-commerce platforms, SPAs, and dynamic
+            content-driven websites.
           </p>
         </div>
 
