@@ -1,22 +1,52 @@
+'use client';
+
+import { menus } from '@/components/menus';
+import { useEffect, useState } from 'react';
+import { twMerge } from 'tailwind-merge';
+
 export const Header = () => {
+  const [activeSection, setActiveSection] = useState('home');
+  console.log('active section:', activeSection);
+
+  useEffect(() => {
+    const options = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1,
+    };
+
+    const observer = new IntersectionObserver((entries: any) => {
+      entries.forEach((entry: any) => {
+        //console.log('Observed entry:', entry.target.id, entry.isIntersecting);
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    }, options);
+
+    menus.forEach((menu: string) => {
+      const element = document.getElementById(menu);
+      if (element) observer.observe(element);
+    });
+
+    return () => observer.disconnect();
+  }, [menus]);
+
   return (
-    <div className='flex justify-center items-center fixed top-3 w-full z-10'>
+    <div className='hidden md:flex justify-center items-center fixed top-3 w-full z-10'>
       <nav className='flex gap-1 p-0.5 border border-white/15 rounded-full bg-white/10 backdrop-blur'>
-        <a className='nav-item' href='#'>
-          Home
-        </a>
-        <a className='nav-item' href='#'>
-          Project
-        </a>
-        <a className='nav-item' href='#'>
-          About
-        </a>
-        <a
-          className='nav-item bg-white text-gray-900 hover:bg-white/70 hover:text-gray-900'
-          href='#'
-        >
-          Contact
-        </a>
+        {menus.map((menu: string, index: number) => {
+          const isActive = activeSection === menu;
+          return (
+            <a
+              key={index}
+              className={twMerge('nav-item', isActive && 'active-nav-item')}
+              href={`#${menu}`}
+            >
+              {menu}
+            </a>
+          );
+        })}
       </nav>
     </div>
   );

@@ -1,3 +1,4 @@
+import MobileNavbar from '@/components/Navbar';
 import { AboutSection } from '@/sections/About';
 import { ContactSection } from '@/sections/Contact';
 import Experience from '@/sections/Experience';
@@ -10,6 +11,7 @@ import { TestimonialsSection } from '@/sections/Testimonials';
 export default function Home() {
   return (
     <div>
+      <MobileNavbar />
       <Header />
       <HeroSection />
       <ProjectsSection />

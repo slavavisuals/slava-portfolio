@@ -340,7 +340,7 @@ const workExperience = [
 
 const Experience = () => {
   return (
-    <section className='pb-16 lg:py-24'>
+    <section id='experience' className='pb-16 lg:py-24'>
       <div className='container'>
         <SectionHeader
           eyebrow='Real-world experience'
@@ -348,13 +348,13 @@ const Experience = () => {
           description='Recent companies I worked for'
         />
 
-        <div className='mt-10 md:mt-20 flex flex-col  gap-20'>
+        <div className='mt-10 md:mt-10 flex flex-col  gap-20'>
           {workExperience.map((workplace, workplaceIndex) => (
             <Card
               key={workplaceIndex}
-              className='px-8 pt-8 pb-8 md:px-10 lg:pt-10 lg:px-20 sticky'
+              className='px-8 pt-8  md:px-10 lg:pt-10 lg:px-20 sticky'
               style={{
-                top: `calc(64px + ${workplaceIndex * 30}px)`,
+                top: `calc(64px + ${workplaceIndex * 40}px)`,
               }}
             >
               <div className='gap-5 grid grid-cols-1 lg:grid-cols-2 lg:gap-16'>

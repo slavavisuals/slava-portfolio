@@ -33,7 +33,7 @@ export const Footer = () => {
           <nav className='flex flex-col md:flex-row items-center gap-8'>
             {footerLinks.map((link) => (
               <a href='#' key={link.title} className='inline-flex gap-1.5'>
-                <span className='font-sembold'>{link.title}</span>
+                <span className='font-semibold'>{link.title}</span>
                 <ArrowUpRight className='size-4' />
               </a>
             ))}

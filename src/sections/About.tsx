@@ -5,6 +5,18 @@ import bookImage from '@/assets/images/book-cover.png';
 import Image from 'next/image';
 import JavaScript from '@/assets/icons/square-js.svg';
 import ReactIcon from '@/assets/icons/react.svg';
+import GraphQLIcon from '@/assets/icons/graphql.svg';
+import SanityIcon from '@/assets/icons/sanity.svg';
+import NodeIcon from '@/assets/icons/nodejs.svg';
+import AWSIcon from '@/assets/icons/awsblack.svg';
+import NextjsIcon from '@/assets/icons/nextjs.svg';
+import AstroIcon from '@/assets/icons/astro.svg';
+import AzureIcon from '@/assets/icons/azure-smooth.svg';
+import TypeScriptIcon from '@/assets/icons/ts.svg';
+import JavaScriptIcon from '@/assets/icons/js.svg';
+import GitHubIcon from '@/assets/icons/github.svg';
+import StrapiIcon from '@/assets/icons/strapi.svg';
+import CloudinaryIcon from '@/assets/icons/cloudinary-colored.svg';
 import mapImage from '@/assets/images/map.png';
 import smileMemoji from '@/assets/images/memoji-smile.png';
 import CardHeader from '@/components/CardHeader';
@@ -12,37 +24,73 @@ import ToolboxItems from '@/components/ToolboxItems';
 import { motion } from 'framer-motion';
 import { useRef } from 'react';
 
+import { CldImage } from 'next-cloudinary';
+
 const toolboxItems = [
   {
+    title: 'AWS',
+    iconType: AWSIcon,
+  },
+  {
+    title: 'Azure',
+    iconType: AzureIcon,
+  },
+  {
     title: 'JavaScript',
-    iconType: JavaScript,
+    iconType: JavaScriptIcon,
+  },
+  {
+    title: 'TypeScript',
+    iconType: TypeScriptIcon,
+  },
+  {
+    title: 'NodeJS',
+    iconType: NodeIcon,
   },
   {
     title: 'React',
     iconType: ReactIcon,
   },
   {
-    title: 'NextJS',
-    iconType: JavaScript,
+    title: 'Next.js',
+    iconType: NextjsIcon,
   },
   {
-    title: 'NodeJS',
-    iconType: ReactIcon,
+    title: 'Astro',
+    iconType: AstroIcon,
   },
   {
     title: 'GraphQL',
-    iconType: JavaScript,
+    iconType: GraphQLIcon,
   },
   {
-    title: 'AWS',
-    iconType: ReactIcon,
+    title: 'Sanity',
+    iconType: SanityIcon,
+  },
+  {
+    title: 'GitHub',
+    iconType: GitHubIcon,
+  },
+  {
+    title: 'Strapi',
+    iconType: StrapiIcon,
+  },
+  {
+    title: 'Cloudinary',
+    iconType: CloudinaryIcon,
   },
 ];
 
 const hobbies = [
   {
-    title: 'Paining',
-    emoji: '🖌️',
+    title: 'Video Editing',
+    emoji: '🎞️',
+    left: '5%',
+    top: '65%',
+  },
+  {
+    title: 'Running',
+    emoji: '🏃🏿',
     left: '5%',
     top: '5%',
   },
@@ -60,23 +108,24 @@ const hobbies = [
     top: '40%',
   },
   {
-    title: 'Gaming',
-    emoji: '🎮',
+    title: 'Traveling',
+    emoji: '🧳',
     left: '10%',
     top: '35%',
   },
   {
-    title: 'Music',
-    emoji: '🎵',
+    title: 'Cycling',
+    emoji: '🚲',
+    left: '80%',
+    top: '5%',
+  },
+  {
+    title: 'Roller Skating',
+    emoji: '🛼',
     left: '70%',
     top: '45%',
   },
-  {
-    title: 'Fitness',
-    emoji: '🏋️‍♂️',
-    left: '5%',
-    top: '65%',
-  },
+
   {
     title: 'Reading',
     emoji: '📚',
@@ -88,7 +137,7 @@ const hobbies = [
 export const AboutSection = () => {
   const constraintRef = useRef(null);
   return (
-    <div className='py-20 lg:py-28'>
+    <div id='about' className='py-20 lg:py-32'>
       <div className='container'>
         <SectionHeader
           eyebrow='About Me'
@@ -101,16 +150,22 @@ export const AboutSection = () => {
             <Card className='h-[320px] md:col-span-2 lg:col-span-1'>
               <CardHeader
                 title='My reads'
-                description='Explore the books shaping my perspectives'
+                description='Explore my books shaping my perspectives'
               />
-              <div className='w-40 mx-auto mt-2 md:mt-0'>
-                <Image src={bookImage} alt='Book cover' />
+              <div className='w-32 mx-auto mt-2 md:-mt-7'>
+                <CldImage
+                  width='324'
+                  height='500'
+                  src='justslava/cant-hurt-me'
+                  alt='Cant hurt me book'
+                  className='h-full w-full object-cover '
+                />
               </div>
             </Card>
             <Card className='h-[320px] md:col-span-3 lg:col-span-2'>
               <CardHeader
                 title='My Toolbox'
-                description='Explore my tech stack I used every day'
+                description='Explore my tech stack I use every day'
                 className=''
               />
               <ToolboxItems
@@ -154,11 +209,14 @@ export const AboutSection = () => {
               </div>
             </Card>
             <Card className='h-[320px] p-0 relative md:col-span-2 lg:col-span-1'>
-              <Image
-                src={mapImage}
-                alt='map'
-                className='h-full w-full object-cover object-left-top'
+              <CldImage
+                width='800'
+                height='800'
+                src='justslava/map1'
+                alt='Description of my image'
+                className='h-full w-full object-cover'
               />
+
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-20 rounded-full  after:content-[''] after:absolute after:inset-0 after:outline after:outline-2 after:-outline-offset-2 after:rounded-full after:outline-gray-950/30">
                 <div className='absolute inset-0 rounded-full bg-gradient-to-r from-emerald-300 to-sky-400 -z-20 animate-ping [animation-duration:2s]'></div>
                 <div className='absolute inset-0 rounded-full bg-gradient-to-r from-emerald-300 to-sky-400 -z-10'></div>
