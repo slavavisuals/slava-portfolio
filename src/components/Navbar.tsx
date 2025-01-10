@@ -3,13 +3,11 @@ import { useState } from 'react';
 import { motion, AnimatePresence, MotionConfig } from 'framer-motion';
 import { menus } from '@/components/menus';
 import Link from 'next/link';
-import grainImage from '@/assets/images/grain.jpg';
 
 function MobileNavbar() {
   const [mobileNav, setMobileNav] = useState(false);
 
   const toggleMobileNav = () => {
-    console.log('click');
     setMobileNav(!mobileNav);
   };
 
