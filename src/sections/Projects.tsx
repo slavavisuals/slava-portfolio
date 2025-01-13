@@ -1,49 +1,75 @@
-import darkSaasLandingPage from '@/assets/images/dark-saas-landing-page.png';
-import lightSaasLandingPage from '@/assets/images/light-saas-landing-page.png';
-import aiStartupLandingPage from '@/assets/images/ai-startup-landing-page.png';
-import Image from 'next/image';
+'use client';
+
 import CheckCircleIcon from '@/assets/icons/check-circle.svg';
 import ArrowUpRightIcon from '@/assets/icons/arrow-up-right.svg';
-import grainImage from '@/assets/images/grain.jpg';
 import { SectionHeader } from '@/components/SectionHeader';
 import Card from '@/components/Card';
+import { ProjectCarousel } from '@/components/Carousel';
 
 const portfolioProjects = [
   {
-    company: 'Acme Corp',
-    year: '2022',
-    title: 'Dark Saas Landing Page',
+    company: 'Boyne Mountain',
+    year: '2024',
+    title: 'Luxury Resort Web Portal Transformation',
     results: [
-      { title: 'Enhanced user experience by 40%' },
-      { title: 'Improved site speed by 50%' },
-      { title: 'Increased mobile traffic by 35%' },
+      { title: 'Streamlined DevOps pipelines for faster deployments' },
+      { title: 'Reduced build times by 60% with optimized Azure pipelines' },
+      { title: 'Integrated multi-brand systems seamlessly' },
+      { title: 'Improved site performance by 45%' },
     ],
-    link: 'https://youtu.be/4k7IdSLxh6w',
-    image: darkSaasLandingPage,
+    link: 'https://www.boynemountain.com',
+    screenshots: [
+      { publicId: 'justslava/projects/bm/bm-slide-0' },
+      { publicId: 'justslava/projects/bm/bm-slide-1' },
+      { publicId: 'justslava/projects/bm/bm-slide-2' },
+      { publicId: 'justslava/projects/bm/bm-slide-3' },
+      { publicId: 'justslava/projects/bm/bm-slide-4' },
+      { publicId: 'justslava/projects/bm/bm-slide-5' },
+    ],
   },
   {
-    company: 'Innovative Co',
-    year: '2021',
-    title: 'Light Saas Landing Page',
+    company: 'Smart Voyage',
+    year: '2024',
+    title: 'Personal Travel Assistant',
     results: [
-      { title: 'Boosted sales by 20%' },
-      { title: 'Expanded customer reach by 35%' },
-      { title: 'Increased brand awareness by 15%' },
+      { title: 'Utilizes the latest version of Next.js' },
+      { title: 'Leverages TypeScript for type safety' },
+      { title: 'Integrates OpenAI API' },
+      { title: 'Tailwind CSS' },
+      { title: 'Designed with mobile-first principles' },
+      { title: 'Incorporates Clerk for secure authentication' },
     ],
-    link: 'https://youtu.be/7hi5zwO75yc',
-    image: lightSaasLandingPage,
+    link: '#',
+    screenshots: [
+      { publicId: 'justslava/projects/sv/smart-voyage-0' },
+      { publicId: 'justslava/projects/sv/smart-voyage-1' },
+      { publicId: 'justslava/projects/sv/smart-voyage-2' },
+      { publicId: 'justslava/projects/sv/smart-voyage-3' },
+      { publicId: 'justslava/projects/sv/smart-voyage-4' },
+      { publicId: 'justslava/projects/sv/smart-voyage-5' },
+    ],
   },
   {
-    company: 'Quantum Dynamics',
-    year: '2023',
-    title: 'AI Startup Landing Page',
+    company: 'JobStack',
+    year: '2024',
+    title: 'Personal Job Tracker Application',
     results: [
-      { title: 'Enhanced user experience by 40%' },
-      { title: 'Improved site speed by 50%' },
-      { title: 'Increased mobile traffic by 35%' },
+      { title: 'Nextjs 15 and React Hook forms' },
+      { title: 'Tailwind CSS' },
+      { title: 'Incorporates ChadCN UI' },
+      { title: 'Prisma CRM' },
+      { title: 'Build with PostgressSQL' },
+      { title: 'Incorporates Clerk for secure authentication' },
     ],
-    link: 'https://youtu.be/Z7I5uSRHMHg',
-    image: aiStartupLandingPage,
+    link: '#',
+    screenshots: [
+      { publicId: 'justslava/projects/job-stack/jobstack-0' },
+      { publicId: 'justslava/projects/job-stack/jobstack-1' },
+      { publicId: 'justslava/projects/job-stack/jobstack-2' },
+      { publicId: 'justslava/projects/job-stack/jobstack-3' },
+      { publicId: 'justslava/projects/job-stack/jobstack-4' },
+      { publicId: 'justslava/projects/job-stack/jobstack-5' },
+    ],
   },
 ];
 
@@ -66,15 +92,15 @@ export const ProjectsSection = () => {
                 top: `calc(64px + ${projectIndex * 40}px)`,
               }}
             >
-              <div className='md:grid lg:grid-cols-2 lg:gap-16'>
-                <div className='lg:pb-16'>
+              <div className='md:grid md:grid-cols-2 lg:gap-16'>
+                <div className='md:pb-8 md:pt-5 lg:pb-16'>
                   <div className='bg-gradient-to-r from-emerald-300 to-sky-400 inline-flex gap-2 font-bold uppercase tracking-widest text-sm text-transparent bg-clip-text'>
                     <span>{project.company}</span>
                     <span>&bull;</span>
                     <span>{project.year}</span>
                   </div>
 
-                  <h3 className='font-serif text-2xl mt-2 md:mt-5 md:text-4xl'>
+                  <h3 className='font-serif text-2xl mt-2 md:mt-5 md:text-2xl lg:text-4xl'>
                     {project.title}
                   </h3>
                   <hr className='border-t-2 border-white/5 mt-4 md:mt-5' />
@@ -96,12 +122,8 @@ export const ProjectsSection = () => {
                     </button>
                   </a>
                 </div>
-                <div className='relative'>
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    className='mt-8 -mb-4 md:-mb-0 lg:mt-0 lg:absolute lg:h-full lg:w-auto lg:max-w-none'
-                  />
+                <div className='flex flex-col items-center mt-5 lg:mt-0'>
+                  <ProjectCarousel screenshots={project.screenshots} />
                 </div>
               </div>
             </Card>

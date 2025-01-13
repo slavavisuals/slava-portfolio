@@ -1,10 +1,13 @@
-import memojiImage from '@/assets/images/memoji-computer.png';
-import Image from 'next/image';
+'use client';
+
+import { FaRegHandshake } from 'react-icons/fa';
 import ArrowDown from '@/assets/icons/arrow-down.svg';
 import grainImage from '@/assets/images/grain.jpg';
 import StarIcon from '@/assets/icons/star.svg';
 import HeroOrbit from '@/components/HeroOrbit';
 import SparkleIcon from '@/assets/icons/sparkle.svg';
+import { CldImage } from 'next-cloudinary';
+import Link from 'next/link';
 
 export const HeroSection = () => {
   return (
@@ -108,10 +111,13 @@ export const HeroSection = () => {
 
       <div className='container'>
         <div className='flex flex-col items-center'>
-          <Image
-            className='size-[100px]'
-            src={memojiImage}
-            alt='person with laptop'
+          <CldImage
+            width='100'
+            height='100'
+            quality='100'
+            src='justslava/characters/character-1'
+            alt='justslava character image'
+            className='mt-8 w-auto rounded-xl'
           />
           <div className='bg-gray-950 border border-gray-950 px-4 py-1.5 inline-flex items-center gap-4 rounded-lg'>
             <div className='bg-green-500 size-2.5 rounded-full relative'>
@@ -140,10 +146,14 @@ export const HeroSection = () => {
             <span className='font-semibold'>Explore my work</span>
             <ArrowDown className='size-4' />
           </button>
-          <button className='inline-flex items-center gap-2 border border-white bg-white text-gray-900 h-12 px-6 rounded-xl'>
-            <span>👋</span>
-            <span className='font-semibold'>Let's Connect</span>
-          </button>
+
+          <Link
+            href='#contact'
+            className='font-semibold z-30 inline-flex items-center gap-2 border border-white bg-white text-gray-900 h-12 px-6 rounded-xl'
+          >
+            Let's Connect
+            <FaRegHandshake size={20} />
+          </Link>
         </div>
       </div>
     </div>

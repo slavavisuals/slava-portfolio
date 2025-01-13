@@ -130,42 +130,6 @@ function MobileNavbar() {
                     </Link>
                   ))}
                 </motion.div>
-                {/* <motion.div
-                  variants={{
-                    hide: {
-                      y: '25%',
-                      opacity: 0,
-                    },
-                    show: {
-                      y: '0%',
-                      opacity: 1,
-                    },
-                  }}
-                  className='w-full h-px bg-white/30'
-                ></motion.div> */}
-                {/* <motion.ul
-                  variants={{
-                    hide: {
-                      y: '25%',
-                      opacity: 0,
-                    },
-                    show: {
-                      y: '0%',
-                      opacity: 1,
-                    },
-                  }}
-                  className='list-none flex justify-center gap-x-4'
-                >
-                  <li>
-                    <div className='bg-white rounded-lg w-8 h-8'></div>
-                  </li>
-                  <li>
-                    <div className='bg-white rounded-lg w-8 h-8'></div>
-                  </li>
-                  <li>
-                    <div className='bg-white rounded-lg w-8 h-8'></div>
-                  </li>
-                </motion.ul> */}
               </motion.div>
             </MotionConfig>
           )}

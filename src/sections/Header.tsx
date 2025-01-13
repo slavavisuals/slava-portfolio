@@ -17,7 +17,6 @@ export const Header = () => {
 
     const observer = new IntersectionObserver((entries: any) => {
       entries.forEach((entry: any) => {
-        //console.log('Observed entry:', entry.target.id, entry.isIntersecting);
         if (entry.isIntersecting) {
           setActiveSection(entry.target.id);
         }

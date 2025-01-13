@@ -1,44 +1,46 @@
-import memojiAvatar1 from '@/assets/images/memoji-avatar-1.png';
-import memojiAvatar2 from '@/assets/images/memoji-avatar-2.png';
-import memojiAvatar3 from '@/assets/images/memoji-avatar-3.png';
-import memojiAvatar4 from '@/assets/images/memoji-avatar-4.png';
-import memojiAvatar5 from '@/assets/images/memoji-avatar-5.png';
+'use client';
+
 import { SectionHeader } from '@/components/SectionHeader';
-import Image from 'next/image';
-import grainImage from '@/assets/images/grain.jpg';
 import Card from '@/components/Card';
 import { Fragment } from 'react';
+import { CldImage } from 'next-cloudinary';
 
 const testimonials = [
   {
-    name: 'Matt Cotte',
-    position: 'Marketing Manager @ TechStartups',
+    name: 'Jady Sit',
+    position: 'Director & Principal @ Le Premier School of Ballet',
+    text: "Slava is a top-notch web developer. I hired him to build up a commercial website to be user-friendly, admin-friendly, and social-media-friendly. & I'm highly satisfied with his work and expertise. I recommend Viacheslav to everyone looking for a high-end web developer.",
+    imagePublicId: 'justslava/characters/character-8',
+  },
+  {
+    name: 'Dan Eng',
+    position: 'CTO @ Catalyst',
     text: "Slava was instrumental in transforming our website into a powerful marketing tool. His attention to detail and ability to understand our brand is exceptional. We're thrilled with the results!",
-    avatar: memojiAvatar1,
+    imagePublicId: 'justslava/characters/character-4',
   },
   {
-    name: 'Olivia Green',
-    position: 'Head of Design @ GreenLeaf',
+    name: 'Nathan Das',
+    position: 'CEO @ Hallicra Inc.',
     text: 'Working with Slava was a pleasure. His expertise in frontend development brought our designs to life in a way we never imagined. The website has exceeded our expectations.',
-    avatar: memojiAvatar2,
+    imagePublicId: 'justslava/characters/character-9',
   },
   {
-    name: 'Daniel White',
-    position: 'CEO @ InnovateCo',
-    text: "Slava's ability to create seamless user experiences is unmatched. Our website has seen a significant increase in conversions since launching the new design. We couldn't be happier.",
-    avatar: memojiAvatar3,
+    name: 'Jacob Pat',
+    position: 'CIO @ Canada Goose',
+    text: 'Working with Slava was seamless and enjoyable. His technical skills and ability to meet tight deadlines make him a standout developer.',
+    imagePublicId: 'justslava/characters/character-5',
   },
   {
-    name: 'Tanya Wong',
-    position: 'Product Manager @ GlobalTech',
-    text: "Slava is a true frontend wizard. He took our complex product and transformed it into an intuitive and engaging user interface. We're already seeing positive feedback from our customers.",
-    avatar: memojiAvatar4,
+    name: 'Paul Thomas',
+    position: 'Director of IT @ Glentel',
+    text: "Slava's expertise with Sanity CMS revolutionized how we manage content across Glentel's group of sites. He streamlined our workflows, improved scalability, and delivered a user-friendly solution that empowers our team. The results have been outstanding!",
+    imagePublicId: 'justslava/characters/character-11',
   },
   {
-    name: 'Michael Brown',
-    position: 'Director of IT @ MegaCorp',
-    text: "Slava's work on our website has been nothing short of exceptional. He's a talented developer who is also a great communicator. We highly recommend him.",
-    avatar: memojiAvatar5,
+    name: 'Vince Piotrowsky',
+    position: 'Technology Director @ EvansHunt',
+    text: 'Slava played a pivotal role in optimizing our Azure pipelines and organizing DevOps integrations. His contributions to the Boyne Resorts multi-brand project were instrumental in delivering a seamless web experience for thousands of customers.',
+    imagePublicId: 'justslava/characters/character-6',
   },
 ];
 
@@ -63,10 +65,12 @@ export const TestimonialsSection = () => {
                   >
                     <div className='flex gap-4 items-center'>
                       <div className='size-14 bg-gray-700 inline-flex items-center justify-center rounded-full flex-shrink-0'>
-                        <Image
-                          src={testimonial.avatar}
-                          alt={testimonial.name}
-                          className='max-h-full'
+                        <CldImage
+                          width='80'
+                          height='80'
+                          src={testimonial.imagePublicId}
+                          alt='character image'
+                          className='w-auto rounded-full'
                         />
                       </div>
                       <div>

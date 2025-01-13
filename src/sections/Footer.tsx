@@ -1,41 +1,65 @@
-import ArrowUpRight from '@/assets/icons/arrow-up-right.svg';
+'use client';
+
+import Link from 'next/link';
+import { FaLinkedin } from 'react-icons/fa6';
+import { FaGithub } from 'react-icons/fa6';
+import { FaInstagram } from 'react-icons/fa6';
+import { FaXTwitter } from 'react-icons/fa6';
+import { FaBluesky } from 'react-icons/fa6';
+import { FaYoutube } from 'react-icons/fa6';
 
 const footerLinks = [
   {
-    title: 'Youtube',
+    title: 'LinkedIn',
+    href: 'https://www.linkedin.com/in/slava1/',
+    icon: <FaLinkedin size={20} />,
+  },
+  {
+    title: 'Github',
+    href: 'https://github.com/slavavisuals',
+    icon: <FaGithub size={20} />,
+  },
+  {
+    title: 'BlueSky',
     href: '#',
+    icon: <FaBluesky size={20} />,
   },
   {
     title: 'X',
     href: '#',
+    icon: <FaXTwitter size={20} />,
+  },
+  {
+    title: 'Youtube',
+    href: 'https://www.youtube.com/@slavavisuals',
+    icon: <FaYoutube size={20} />,
   },
   {
     title: 'Instagram',
     href: '#',
-  },
-  {
-    title: 'Linked',
-    href: '#',
+    icon: <FaInstagram size={20} />,
   },
 ];
 
 export const Footer = () => {
   return (
-    <footer className='relative -z-10 overflow-x-clip'>
-      <div
-        className='absolute h-[400px] w-[1600px] bottom-0 left-1/2 -translate-x-1/2 bg-emerald-300/30
-      [mask-image:radial-gradient(50%_50%_at_bottom_center,black,transparent)] -z-10
-      '
-      ></div>
+    <footer>
       <div className='container'>
         <div className='border-t border-white/15 py-6 text-sm flex flex-col md:flex-row md:justify-between items-center gap-8'>
-          <div className='text-white/40'>&copy; 2025. All rights reserved.</div>
-          <nav className='flex flex-col md:flex-row items-center gap-8'>
-            {footerLinks.map((link) => (
-              <a href='#' key={link.title} className='inline-flex gap-1.5'>
-                <span className='font-semibold'>{link.title}</span>
-                <ArrowUpRight className='size-4' />
-              </a>
+          <div className='text-white/40'>
+            &copy; 2025 JustSlava | Crafted with care
+          </div>
+          <nav className='flex items-center gap-8'>
+            {footerLinks.map((link, index) => (
+              <Link
+                key={index}
+                className='inline-flex gap-1.5'
+                href={link.href}
+                target='_blank'
+                title={link.title}
+              >
+                {link.icon}
+              </Link>
             ))}
           </nav>
         </div>
