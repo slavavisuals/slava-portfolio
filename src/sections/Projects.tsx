@@ -39,7 +39,7 @@ const portfolioProjects = [
       { title: 'Designed with mobile-first principles' },
       { title: 'Incorporates Clerk for secure authentication' },
     ],
-    link: '#',
+    link: 'https://smartvoyage.justslava.com',
     screenshots: [
       { publicId: 'justslava/projects/sv/smart-voyage-0' },
       { publicId: 'justslava/projects/sv/smart-voyage-1' },
@@ -61,7 +61,7 @@ const portfolioProjects = [
       { title: 'Build with PostgressSQL' },
       { title: 'Incorporates Clerk for secure authentication' },
     ],
-    link: '#',
+    link: 'https://jobstack.justslava.com',
     screenshots: [
       { publicId: 'justslava/projects/job-stack/jobstack-0' },
       { publicId: 'justslava/projects/job-stack/jobstack-1' },
